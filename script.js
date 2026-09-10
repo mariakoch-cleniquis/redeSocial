@@ -1,43 +1,30 @@
-//Botao curtidas
-document.addEventListener("DOMContentLoaded", () =>{
-const likeBtn = document.querySelector(".left-actions .action-btn:first-child");
-if (!likeBtn) return;
-const likeSvg = likeBtn.querySelector("svg");
+document.addEventListener("DOMContentLoaded", () => {
+    const likeBtn = document.getElementById("like-btn");
+    if (!likeBtn) return;
+    
+    const likeSvg = likeBtn.querySelector("svg");
+    const likeCountSpan = document.getElementById("like-count");
+    
+    let liked = false;
+    let baseCount = 1200;
 
+    likeBtn.addEventListener("click", () => {
+        liked = !liked;
 
-//localiza o contador
+        if (liked) {
+            likeSvg.style.fill = "#ef4444";
+            likeSvg.style.stroke = "#ef4444";
+            likeCountSpan.textContent = baseCount + 1;
+        } else {
+            likeSvg.style.fill = "none";
+            likeSvg.style.stroke = "currentColor";
+            likeCountSpan.textContent = baseCount;
+        }
 
-let textNode = Array.from(likeBtn.childNodes).find(node) => node.nodeType
-=== Node.TEXT_NODE && node.textContent.trim()!== ""
-);
-
-//zera o contador
-let cont = 0;
-
-//atualiza
-if(textNode){
-    textNode.textContent = `0`;
-}
-
-//coração
-function applyLikedStyle(){
-likeSvg.style.fill ="#ef4444";
-likeSvg.style.stroke ="#ef4444";
-likeSvg.style.color ="#ef4444";
-
-   
-//efeito curtida
-likeSvg.style.transform ="scale(1.3)";
-setTimeout(() => (likeSvg.style.transform="scale(1)")150)
-}
-
-
-
-
-
-
-
-
-
-
-})
+        // Efeito de escala (animação do clique)
+        likeSvg.style.transform = "scale(1.3)";
+        setTimeout(() => {
+            likeSvg.style.transform = "scale(1)";
+        }, 150);
+    });
+});
