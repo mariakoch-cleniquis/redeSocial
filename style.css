@@ -14,7 +14,6 @@ body {
     padding: 20px;
 }
 
-/* Moldura estilo smartphone com borda em gradiente */
 .phone-frame {
     width: 100%;
     max-width: 380px;
@@ -32,7 +31,6 @@ body {
     flex-direction: column;
 }
 
-/* Cabeçalho do Post */
 .post-header {
     display: flex;
     align-items: center;
@@ -64,7 +62,6 @@ body {
     color: #e9ecf0;
 }
 
-/* Mídia / Foto */
 .post-media {
     position: relative;
     width: 100%;
@@ -79,7 +76,6 @@ body {
     display: block;
 }
 
-/* Avatar pequeno com ícone '+' sobreposto na foto */
 .user-badge {
     position: absolute;
     bottom: 16px;
@@ -113,7 +109,6 @@ body {
     border: 2px solid #ffffff;
 }
 
-/* Ações (Curtir, Comentar, Repostar, Direct, Salvar) */
 .post-actions {
     display: flex;
     align-items: center;
@@ -150,7 +145,6 @@ body {
     transition: transform 0.1s ease;
 }
 
-/* Texto de Curtidas */
 .post-details {
     padding: 0 16px 12px 16px;
     font-size: 13px;
@@ -165,7 +159,6 @@ body {
     color: #fefeff;
 }
 
-/* Barra de Navegação Inferior */
 .nav-bar {
     display: flex;
     justify-content: space-around;

@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
             likeCountSpan.textContent = baseCount;
         }
 
-        // Efeito de escala (animação do clique)
         likeSvg.style.transform = "scale(1.3)";
         setTimeout(() => {
             likeSvg.style.transform = "scale(1)";
