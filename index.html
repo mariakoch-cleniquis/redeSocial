@@ -1,71 +1,46 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // 1. Botão de Curtir
-    const likeBtn = document.getElementById("like-btn");
-    if (likeBtn) {
-        const likeSvg = likeBtn.querySelector("svg");
-        const likeCountSpan = document.getElementById("like-count");
-        
-        let liked = false;
-        let baseCount = 1200;
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Social Media</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-        likeBtn.addEventListener("click", () => {
-            liked = !liked;
+    <div class="phone-frame">
+        <div class="phone-screen">
 
-            if (liked) {
-                likeSvg.style.fill = "#ef4444";
-                likeSvg.style.stroke = "#ef4444";
-                likeCountSpan.textContent = baseCount + 1;
-            } else {
-                likeSvg.style.fill = "none";
-                likeSvg.style.stroke = "currentColor";
-                likeCountSpan.textContent = baseCount;
-            }
+            <!-- Cabeçalho -->
+            <div class="post-header">
+                <div class="user-info">
+                    <img class="avatar-small" src="https://i.pinimg.com/736x/35/81/58/358158f9a2c443617b8180fee40d936c.jpg" alt="Avatar">
+                    <span class="username">Psicóloga Maria</span>
+                </div>
+            </div>
 
-            likeSvg.style.transform = "scale(1.3)";
-            setTimeout(() => {
-                likeSvg.style.transform = "scale(1)";
-            }, 150);
-        });
-    }
+            <!-- Mídia -->
+            <div class="post-media">
+                <img class="main-img" src="https://i.pinimg.com/736x/a6/ed/29/a6ed29dd6616b5afa31856cebcaaee5f.jpg" alt="Post photo">
+            </div>
 
-    // 2. Botão de Comentar (Segundo botão na barra de ações)
-    const commentBtn = document.querySelectorAll(".left-actions .action-btn")[1];
-    if (commentBtn) {
-        commentBtn.addEventListener("click", () => {
-            alert("Abrir seção de comentários.");
-        });
-    }
+            <!-- Ações -->
+            <div class="post-actions">
+                <div class="left-actions">
+                    <!-- BOTÃO DE CURTIR COM ID -->
+                    <button class="action-btn" id="like-btn" type="button">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <span id="like-count">1200</span>
+                    </button>
+                </div>
+            </div>
 
-    // 3. Botão de Repostar/Compartilhar (Terceiro botão)
-    const repostBtn = document.querySelectorAll(".left-actions .action-btn")[2];
-    if (repostBtn) {
-        repostBtn.addEventListener("click", () => {
-            alert("Post repostado com sucesso!");
-        });
-    }
+        </div>
+    </div>
 
-    // 4. Botão de Direct/Enviar (Quarto botão)
-    const shareBtn = document.querySelectorAll(".left-actions .action-btn")[3];
-    if (shareBtn) {
-        shareBtn.addEventListener("click", () => {
-            alert("Abrir opções de envio por Direct.");
-        });
-    }
-
-    // 5. Botão de Salvar (O último botão, que fica isolado à direita)
-    const saveBtn = document.querySelector(".post-actions > .action-btn");
-    if (saveBtn) {
-        const saveSvg = saveBtn.querySelector("svg");
-        let saved = false;
-
-        saveBtn.addEventListener("click", () => {
-            saved = !saved;
-
-            if (saved) {
-                saveSvg.style.fill = "currentColor";
-            } else {
-                saveSvg.style.fill = "none";
-            }
-        });
-    }
-});
+    <!-- SCRIPT -->
+    <script src="script.js"></script>
+</body>
+</html>
