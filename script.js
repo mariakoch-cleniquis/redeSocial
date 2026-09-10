@@ -1,6 +1,12 @@
-document.addEventListener("DOMContentLoaded", () => {
+console.log("Script carregado com sucesso!"); // Verifique se isso aparece no F12 do navegador
+
+window.addEventListener("DOMContentLoaded", () => {
     const likeBtn = document.getElementById("like-btn");
-    if (!likeBtn) return;
+    
+    if (!likeBtn) {
+        console.error("Botão de curtir não encontrado!");
+        return;
+    }
     
     const likeSvg = likeBtn.querySelector("svg");
     const likeCountSpan = document.getElementById("like-count");
